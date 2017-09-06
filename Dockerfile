@@ -81,7 +81,7 @@ COPY telegraf/telegraf.conf /etc/telegraf/telegraf.conf
 COPY telegraf/init.sh /etc/init.d/telegraf
 
 # Install Grafana
-RUN wget https://github.com/fg2it/grafana-on-raspberry/releases/download/v4.4.3/grafana_4.4.3_armhf.deb
+RUN wget https://github.com/fg2it/grafana-on-raspberry/releases/download/v4.4.3/grafana_4.4.3_armhf.deb && \
 	dpkg -i grafana_4.4.3_armhf.deb && rm grafana_4.4.3_armhf.deb
 
 # Configure Grafana
