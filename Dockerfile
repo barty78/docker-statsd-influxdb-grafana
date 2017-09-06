@@ -65,24 +65,24 @@ COPY scripts/setup_mysql.sh /tmp/setup_mysql.sh
 RUN /tmp/setup_mysql.sh
 
 # Install InfluxDB
-RUN wget https://dl.influxdata.com/influxdb/releases/influxdb_${INFLUXDB_VERSION}_amd64.deb && \
-	dpkg -i influxdb_${INFLUXDB_VERSION}_amd64.deb && rm influxdb_${INFLUXDB_VERSION}_amd64.deb
+RUN wget https://dl.influxdata.com/influxdb/releases/influxdb_${INFLUXDB_VERSION}_armhf.deb && \
+	dpkg -i influxdb_${INFLUXDB_VERSION}_armhf.deb && rm influxdb_${INFLUXDB_VERSION}_armhf.deb
 
 # Configure InfluxDB
 COPY influxdb/influxdb.conf /etc/influxdb/influxdb.conf
 COPY influxdb/init.sh /etc/init.d/influxdb
 
 # Install Telegraf
-RUN wget https://dl.influxdata.com/telegraf/releases/telegraf_${TELEGRAF_VERSION}_amd64.deb && \
-	dpkg -i telegraf_${TELEGRAF_VERSION}_amd64.deb && rm telegraf_${TELEGRAF_VERSION}_amd64.deb
+RUN wget https://dl.influxdata.com/telegraf/releases/telegraf_${TELEGRAF_VERSION}_armhf.deb && \
+	dpkg -i telegraf_${TELEGRAF_VERSION}_armhf.deb && rm telegraf_${TELEGRAF_VERSION}_armhf.deb
 
 # Configure Telegraf
 COPY telegraf/telegraf.conf /etc/telegraf/telegraf.conf
 COPY telegraf/init.sh /etc/init.d/telegraf
 
 # Install Grafana
-RUN wget https://grafanarel.s3.amazonaws.com/builds/grafana_${GRAFANA_VERSION}_amd64.deb && \
-	dpkg -i grafana_${GRAFANA_VERSION}_amd64.deb && rm grafana_${GRAFANA_VERSION}_amd64.deb
+RUN wget https://grafanarel.s3.amazonaws.com/builds/grafana_${GRAFANA_VERSION}_armhf.deb && \
+	dpkg -i grafana_${GRAFANA_VERSION}_armhf.deb && rm grafana_${GRAFANA_VERSION}_armhf.deb
 
 # Configure Grafana
 COPY grafana/grafana.ini /etc/grafana/grafana.ini
