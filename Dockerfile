@@ -1,5 +1,5 @@
-FROM ubuntu:16.04
-MAINTAINER Samuele Bistoletti <samuele.bistoletti@gmail.com>
+FROM resin/rpi-raspbian:jessie
+MAINTAINER Peter Bartlett <p_a_bartlett@yahoo.com.au>
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV LANG C.UTF-8
