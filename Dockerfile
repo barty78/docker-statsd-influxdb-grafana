@@ -21,7 +21,7 @@ ENV MYSQL_GRAFANA_PW grafana
 COPY system/99fixbadproxy /etc/apt/apt.conf.d/99fixbadproxy
 
 # Clear previous sources
-RUN rm /var/lib/apt/lists/* -vf
+RUN rm -rf /var/lib/apt/lists/*
 
 # Base dependencies
 RUN apt-get -y update && \
